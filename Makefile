@@ -69,7 +69,7 @@ scpobjs=$(SCPOBJS)
 
 srcdir=.
 
-prefix=/usr/local
+prefix=/home/hzy19930315/mips-install
 exec_prefix=${prefix}
 datarootdir = ${prefix}/share
 bindir=${exec_prefix}/bin
@@ -77,14 +77,14 @@ sbindir=${exec_prefix}/sbin
 mandir=${datarootdir}/man
 
 CC=mips-gcc
-AR=ar
-RANLIB=ranlib
+AR=mips-ar
+RANLIB=mips-ranlib
 STRIP=strip
 INSTALL=install
 CPPFLAGS=
 CFLAGS+=-I. -I$(srcdir) $(CPPFLAGS) -Os -W -Wall -Wno-pointer-sign
 LIBS+=-lutil -lz 
-LDFLAGS=
+LDFLAGS = -static
 
 EXEEXT=
 
